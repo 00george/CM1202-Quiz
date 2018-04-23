@@ -3,6 +3,7 @@ package menu;
 import Login.EngagementTeam;
 import Login.EngangementTeamLoader;
 import action.Action;
+import action.NewQuestionSetAction;
 import action.SetUpQuizAction;
 
 import java.util.Scanner;
@@ -10,12 +11,14 @@ import java.util.Scanner;
 public class AdminMenu extends Menu{
 
     SetUpQuizAction setUpQuizAction;
+    NewQuestionSetAction newQuestionSetAction;
 
     public AdminMenu(){
         super();
 
 
         setUpQuizAction = new SetUpQuizAction("Set up quiz.");
+        newQuestionSetAction = new NewQuestionSetAction("Create new question set.");
         actions = new Action[]{setUpQuizAction};
         name = "Engangement team Menu";
     }
