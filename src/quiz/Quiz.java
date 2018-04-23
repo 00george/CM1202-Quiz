@@ -97,9 +97,6 @@ public class Quiz {
         // save object to a binary file
         r.save("data/Records.dat");
 
-
-        r.getUniqueSchoolName();
-
     }
 
 
