@@ -5,16 +5,14 @@ import action.Action;
 
 public class Menu {
 
-    protected String name;
+    public String name;
     protected Action[] actions;
 
     public Menu(){
         actions = new Action[]{};
     }
 
-    public Menu(Action[] actions){
-        this.actions = actions;
-
+    public void OnLoad(){
 
     }
 

@@ -1,10 +1,13 @@
 package quiz;
 
+import Statistic.Record;
+import Statistic.RecordLoader;
 import question.Question;
 import question.QuestionSet;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class Quiz {
 
@@ -43,6 +46,30 @@ public class Quiz {
             System.out.println("Press any key to continue");
             in.nextLine();
         }
+
+
+    }
+
+    public void outputStats(){
+        String filename = "records.dat";
+
+        Record r = new Record();
+
+        // <----- Load records from a dat file ----->
+        try {
+            r = RecordLoader.load("Records.dat");
+        } catch (Exception e) {
+            // Do nothing
+        }
+
+        //r.add();
+
+        // save object to a binary file
+        r.save(filename);
+
+
+        r.getUniqueSchoolName();
+
     }
 
     public void exir(){

@@ -14,7 +14,6 @@ public class Main {
 
     public static void main(String[] args) {
         MainMenu mainMenu = new MainMenu();
-
         MenuManager.currentMenu = mainMenu;
 
         Scanner scanner = new Scanner(System.in);

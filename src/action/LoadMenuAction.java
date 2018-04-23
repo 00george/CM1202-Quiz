@@ -15,5 +15,6 @@ public class LoadMenuAction extends Action{
     public void execute(){
         MenuManager.lastMenu = MenuManager.currentMenu;
         MenuManager.currentMenu = menuToLoad;
+        menuToLoad.OnLoad();
     }
 }
