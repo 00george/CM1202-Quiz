@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CM1202-Quiz:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CM1202_Quiz_jar</output-path>
+    <root id="archive" name="CM1202-Quiz.jar">
+      <element id="module-output" name="CM1202-Quiz" />
+    </root>
+  </artifact>
+</component>
