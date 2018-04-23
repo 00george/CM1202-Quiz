@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Arrays;
 
 public class RecordEntry implements Serializable {
     private String schoolName;
@@ -15,13 +16,35 @@ public class RecordEntry implements Serializable {
         this.time = time;
     }
 
-    public String arrayToString() {
-        int ss[] = {1, 2, 3};
-            String s = String.join(", ", ss);
-            return s;
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public String getQuestionTheme() {
+        return questionTheme;
+    }
+
+    public int[] getQuestionCorrect() {
+        return questionCorrect;
+    }
+
+    public int[] getQuestionIncorrect() {
+        return questionIncorrect;
+    }
+
+    public String getStringQuestionCorrect() {
+        return Arrays.toString(questionCorrect);
+    }
+
+    public String getStringQuestionIncorrect() {
+        return Arrays.toString(questionIncorrect);
+    }
+
+    public int getTime() {
+        return time;
     }
 
     public String toString() {
-        return String.format("School Name: %s", arrayToString());
+        return String.format("%s %s %s %s %d", schoolName, questionTheme, questionCorrect, questionIncorrect, time);
     }
 }
