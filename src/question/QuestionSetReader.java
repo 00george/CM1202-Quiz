@@ -21,6 +21,7 @@ public class QuestionSetReader {
         try {
             //Initialize scanner with the file
             in = new Scanner(file);
+
             //Loop until the file has no more lines to read
             while (in.hasNextLine()) {
                 //Read the next line

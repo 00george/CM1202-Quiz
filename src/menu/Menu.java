@@ -9,11 +9,12 @@ public class Menu {
     protected Action[] actions;
 
     public Menu(){
-
+        actions = new Action[]{};
     }
 
     public Menu(Action[] actions){
         this.actions = actions;
+
 
     }
 

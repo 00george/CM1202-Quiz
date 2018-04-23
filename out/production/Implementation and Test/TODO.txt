@@ -1,0 +1,6 @@
+Check the quiz runs
+Load a question set by theme
+output statistics
+*maybe* do the admin section
+JUST MAKE SURE QUIZ WORKS!
+TEST CASES
