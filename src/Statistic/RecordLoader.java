@@ -1,12 +1,6 @@
 package Statistic;
 
-<<<<<<< HEAD
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
-=======
 import java.io.*;
->>>>>>> 9db20932a79a88fbe19184c20dced316112be4a2
 
 public class RecordLoader {
     public static Record load(String filename) throws Exception {
