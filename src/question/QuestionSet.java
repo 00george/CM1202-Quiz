@@ -1,8 +1,9 @@
 package question;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class QuestionSet {
+public class QuestionSet implements Serializable {
 
 
     private String theme;

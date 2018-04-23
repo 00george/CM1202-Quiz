@@ -15,12 +15,13 @@ public class NewQuestionSetAction extends Action {
 
     @Override
     public void execute() {
-        Scanner in = new Scanner();
+        Scanner in = new Scanner(System.in);
         QuestionSet newSet = new QuestionSet();
         System.out.println("Please enter a theme: ");
         String theme = in.nextLine();
         for(int i = 0;i<10;i++){
-            System.out.println("Adding Question: " + i + 1 + "//10");
+            int num = i+1;
+            System.out.println("Adding Question: " + num + "/10");
             newSet.getQuestions().add(getNewQusetion());
         }
         QuestionSetWriter.saveBinary(theme + ".dat",newSet);
@@ -29,18 +30,19 @@ public class NewQuestionSetAction extends Action {
 
     public Question getNewQusetion(){
         ArrayList<String> answers = new ArrayList<>();
-        Scanner in = new Scanner();
+        Scanner in = new Scanner(System.in);
         System.out.println("Please enter the question: ");
         String questionText = in.nextLine();
         for(int i = 0;i<4;i++){
             System.out.println("Please enter an answer: ");
             String answer = in.nextLine();
-            answers.add(answer;)
+            answers.add(answer);
         }
         System.out.println("Please enter the index of the correct answer (0-3)");
         int correctIndex = in.nextInt();
         in.nextLine();
-        Question question = new Question(questionText,answers.toArray(),correctIndex);
+        String[] answersArray = answers.toArray(new String[answers.size()]);
+        Question question = new Question(questionText,answersArray,correctIndex);
         return question;
     }
 }

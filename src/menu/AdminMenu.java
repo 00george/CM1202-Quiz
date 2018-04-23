@@ -19,7 +19,7 @@ public class AdminMenu extends Menu{
 
         setUpQuizAction = new SetUpQuizAction("Set up quiz.");
         newQuestionSetAction = new NewQuestionSetAction("Create new question set.");
-        actions = new Action[]{setUpQuizAction};
+        actions = new Action[]{setUpQuizAction,newQuestionSetAction};
         name = "Engangement team Menu";
     }
 
