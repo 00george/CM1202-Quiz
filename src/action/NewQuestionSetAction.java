@@ -22,13 +22,14 @@ public class NewQuestionSetAction extends Action {
         for(int i = 0;i<10;i++){
             int num = i+1;
             System.out.println("Adding Question: " + num + "/10");
-            newSet.getQuestions().add(getNewQusetion());
+            newSet.getQuestions().add(getNewQuestion());
         }
+        newSet.setTheme(theme);
         QuestionSetWriter.saveBinary(theme + ".dat",newSet);
         System.out.println("Saved as: " + theme + ".dat");
     }
 
-    public Question getNewQusetion(){
+    public Question getNewQuestion(){
         ArrayList<String> answers = new ArrayList<>();
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the question: ");

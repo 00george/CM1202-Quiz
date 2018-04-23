@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Quiz {
 
     public static Quiz currentQuiz;
-
+    private long time;
     private QuestionSet questionSet;
     private Question currentQuestion;
     private int numCorrect;
@@ -30,6 +30,8 @@ public class Quiz {
     }
 
     public void start(){
+        long startTime = System.currentTimeMillis();
+
         numbersCorrect = new ArrayList<>();
         numbersWrong = new ArrayList<>();
 
@@ -68,9 +70,11 @@ public class Quiz {
             System.out.println("Press any key to continue");
             in.nextLine();
 
-            outputStats();
-        }
 
+        }
+            displayResults();
+            time = (System.currentTimeMillis() - startTime) / 1000;
+            outputStats();
 
     }
 
@@ -88,13 +92,10 @@ public class Quiz {
             // Do nothing
         }
 
-        r.add(school,questionSet.getTheme(),numbersCorrect,numbersWrong,(int)(System.currentTimeMillis() / 1000));
+        r.add(school,questionSet.getTheme(),numbersCorrect,numbersWrong,(int)time);
 
         // save object to a binary file
         r.save("data/Records.dat");
-
-
-        r.getUniqueSchoolName();
 
     }
 
@@ -118,6 +119,6 @@ public class Quiz {
     }
 
     public void displayResults(){
-
+        System.out.println(numCorrect + "/" + "10");
     }
 }

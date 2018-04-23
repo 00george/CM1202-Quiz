@@ -31,11 +31,7 @@ public class AdminMenu extends Menu{
 
         String filename = "Engagement.dat";
 
-        Scanner in = new Scanner(System.in);
-        System.out.println("Please enter a username: ");
-        String username = in.nextLine();
-        System.out.println("Please enter a password: ");
-        String password = in.nextLine();
+
 
         EngagementTeam et = new EngagementTeam();
 
@@ -44,6 +40,12 @@ public class AdminMenu extends Menu{
         } catch (Exception e) {
             // Do nothing
         }
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Please enter a username: ");
+        String username = in.nextLine();
+        System.out.println("Please enter a password: ");
+        String password = in.nextLine();
 
         if(!et.verify(username,password)){
             MenuManager.currentMenu = new MainMenu();
