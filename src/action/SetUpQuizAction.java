@@ -26,6 +26,7 @@ public class SetUpQuizAction extends Action{
         String filename = in.nextLine();
         QuestionSet qs = QuestionSetReader.readBinary(filename);
         ArrayList<String> schoolOptions = new ArrayList<>();
+        System.out.println("Please add some schools: ");
         while(!in.nextLine().equals("done")) {
             schoolOptions.add(in.nextLine());
         }

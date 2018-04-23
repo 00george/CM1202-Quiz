@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         MenuManager.currentMenu = MenuManager.mainMenu;
-
+        MenuManager.currentMenu.OnLoad();
         Scanner scanner = new Scanner(System.in);
         //loop here
         while (true) {

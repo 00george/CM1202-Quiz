@@ -19,14 +19,17 @@ public class AdminMenu extends Menu{
         super();
 
 
+
+    }
+
+    public void OnLoad(){
+
         setUpQuizAction = new SetUpQuizAction("Set up quiz.");
         newQuestionSetAction = new NewQuestionSetAction("Create new question set.");
         loadMainMenuAction = new LoadMenuAction(MenuManager.mainMenu,"Go back to main menu.");
         actions = new Action[]{setUpQuizAction,newQuestionSetAction,loadMainMenuAction};
         name = "Engangement team Menu";
-    }
 
-    public void OnLoad(){
         String filename = "Engagement.dat";
 
         Scanner in = new Scanner(System.in);

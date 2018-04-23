@@ -5,6 +5,7 @@ import Statistic.RecordLoader;
 import question.Question;
 import question.QuestionSet;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,13 +21,27 @@ public class Quiz {
     private String school;
     private ArrayList<Question> questions;
 
+    private ArrayList<Integer> numbersCorrect;
+    private ArrayList<Integer> numbersWrong;
+
     public Quiz(QuestionSet questionSet,ArrayList<String> schoolOptions){
         this.questionSet = questionSet;
         this.schoolOptions = schoolOptions;
     }
 
     public void start(){
+        numbersCorrect = new ArrayList<>();
+        numbersWrong = new ArrayList<>();
+
         Scanner in = new Scanner(System.in);
+
+
+        System.out.println("Please select your school: ");
+        for(String schoolOp : schoolOptions){
+            System.out.println(schoolOp);
+        }
+        school = in.nextLine();
+
 
         //TimeoutTask timeoutTask = new TimeoutTask();
         //Timer timeoutTimer = new Timer();
@@ -57,6 +72,8 @@ public class Quiz {
     public void outputStats(){
         String filename = "records.dat";
 
+        int[] numCorrectArray = numbersCorrect.toArray(new Integer[numbersCorrect.size()]);
+
         Record r = new Record();
 
         // <----- Load records from a dat file ----->
@@ -66,7 +83,7 @@ public class Quiz {
             // Do nothing
         }
 
-        //r.add();
+        r.add(school,questionSet.getTheme(),);
 
         // save object to a binary file
         r.save(filename);

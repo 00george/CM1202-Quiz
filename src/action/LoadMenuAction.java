@@ -13,8 +13,11 @@ public class LoadMenuAction extends Action{
     }
 
     public void execute(){
+        System.out.println(MenuManager.currentMenu.name);
+        //System.out.println(MenuManager.lastMenu.name);
         MenuManager.lastMenu = MenuManager.currentMenu;
         MenuManager.currentMenu = menuToLoad;
+
         menuToLoad.OnLoad();
     }
 }
