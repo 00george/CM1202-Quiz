@@ -3,6 +3,7 @@ import menu.MenuManager;
 import question.Question;
 import question.QuestionSet;
 import question.QuestionSetReader;
+import quiz.Quiz;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,8 +14,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        MainMenu mainMenu = new MainMenu();
-        MenuManager.currentMenu = mainMenu;
+        MenuManager.currentMenu = MenuManager.mainMenu;
 
         Scanner scanner = new Scanner(System.in);
         //loop here

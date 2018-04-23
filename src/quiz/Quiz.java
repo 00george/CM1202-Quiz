@@ -11,14 +11,18 @@ import java.util.Scanner;
 
 public class Quiz {
 
+    public static Quiz currentQuiz;
+
     private QuestionSet questionSet;
     private Question currentQuestion;
     private int numCorrect;
-    private School school;
+    public ArrayList<String> schoolOptions;
+    private String school;
     private ArrayList<Question> questions;
 
-    public Quiz(QuestionSet questionSet){
+    public Quiz(QuestionSet questionSet,ArrayList<String> schoolOptions){
         this.questionSet = questionSet;
+        this.schoolOptions = schoolOptions;
     }
 
     public void start(){

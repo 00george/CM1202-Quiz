@@ -9,7 +9,7 @@ public class StartQuizAction extends Action {
 
     public StartQuizAction(String text){
         super(text);
-
+        quiz = Quiz.currentQuiz;
     }
 
     public void SetQuiz(Quiz quiz){

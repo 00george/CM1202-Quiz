@@ -3,7 +3,7 @@ package Login;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-public class EngangementTeamLoader {
+public class EngagementTeamLoader {
 
     public static EngagementTeam load(String filename) throws Exception {
         try {

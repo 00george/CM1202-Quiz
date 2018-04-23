@@ -1,7 +1,11 @@
 package question;
 
+import Login.EngagementTeam;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -61,6 +65,21 @@ public class QuestionSetReader {
         qs.setQuestions(questions);
         qs.setTheme(theme);
         return qs;
+    }
+
+    public static QuestionSet readBinary(String filepath){
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("data/" + filepath));
+            QuestionSet qs = (QuestionSet)in.readObject();
+            in.close();
+            return qs;
+        }
+        catch (Exception e) {
+            System.out.println("\nProblem reading file: " + filepath);
+            e.printStackTrace();
+
+        }
+        return null;
     }
 
 }

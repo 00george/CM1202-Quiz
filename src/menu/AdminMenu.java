@@ -1,8 +1,9 @@
 package menu;
 
 import Login.EngagementTeam;
-import Login.EngangementTeamLoader;
+import Login.EngagementTeamLoader;
 import action.Action;
+import action.LoadMenuAction;
 import action.NewQuestionSetAction;
 import action.SetUpQuizAction;
 
@@ -12,6 +13,7 @@ public class AdminMenu extends Menu{
 
     SetUpQuizAction setUpQuizAction;
     NewQuestionSetAction newQuestionSetAction;
+    LoadMenuAction loadMainMenuAction;
 
     public AdminMenu(){
         super();
@@ -19,7 +21,8 @@ public class AdminMenu extends Menu{
 
         setUpQuizAction = new SetUpQuizAction("Set up quiz.");
         newQuestionSetAction = new NewQuestionSetAction("Create new question set.");
-        actions = new Action[]{setUpQuizAction,newQuestionSetAction};
+        loadMainMenuAction = new LoadMenuAction(MenuManager.mainMenu,"Go back to main menu.");
+        actions = new Action[]{setUpQuizAction,newQuestionSetAction,loadMainMenuAction};
         name = "Engangement team Menu";
     }
 
@@ -35,7 +38,7 @@ public class AdminMenu extends Menu{
         EngagementTeam et = new EngagementTeam();
 
         try {
-            et = EngangementTeamLoader.load(filename);
+            et = EngagementTeamLoader.load(filename);
         } catch (Exception e) {
             // Do nothing
         }

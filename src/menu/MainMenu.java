@@ -12,7 +12,7 @@ public class MainMenu extends Menu {
     public MainMenu(){
         super();
         startQuizAction = new StartQuizAction("Start Quiz");
-        loadAdminMenu = new LoadMenuAction(new AdminMenu(),"Engagement team options");
+        loadAdminMenu = new LoadMenuAction(MenuManager.adminMenu,"Engagement team options");
         actions = new Action[]{startQuizAction,loadAdminMenu};
         name = "Main Menu";
 
