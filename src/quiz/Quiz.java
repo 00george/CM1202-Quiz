@@ -75,10 +75,9 @@ public class Quiz {
     }
 
     public void outputStats(){
-        String filename = "records.dat";
+        String filename = "Records.dat";
 
-        Integer[] numCorrectArray = numbersCorrect.toArray(new Integer[numbersCorrect.size()]);
-        Integer[] numWrongArray = numbersWrong.toArray(new Integer[numbersWrong.size()]);
+
 
         Record r = new Record();
 
@@ -92,7 +91,7 @@ public class Quiz {
         r.add(school,questionSet.getTheme(),numbersCorrect,numbersWrong,(int)(System.currentTimeMillis() / 1000));
 
         // save object to a binary file
-        r.save(filename);
+        r.save("data/Records.dat");
 
 
         r.getUniqueSchoolName();

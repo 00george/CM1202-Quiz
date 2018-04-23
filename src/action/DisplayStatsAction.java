@@ -11,11 +11,16 @@ public class DisplayStatsAction extends Action {
 
     @Override
     public void execute() {
+        String filename = "Records.dat";
+
+        Record r = new Record();
+
         try {
-            Record record = RecordLoader.load("data/Records.dat");
-            record.showTable();
+            r = RecordLoader.load(filename);
         } catch (Exception e) {
-            e.printStackTrace();
+            // Do nothing
         }
+        r.showTable();
+
     }
 }
