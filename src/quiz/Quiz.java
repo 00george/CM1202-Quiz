@@ -59,6 +59,9 @@ public class Quiz {
             }
             System.out.println("Please select an answer: ");
             int selection = getUserInput();
+            if(selection == -1){
+                return;
+            }
             if(checkAnswer(questions.get(i),selection)){
                 System.out.println("Correct answer");
                 numbersCorrect.add(i);
@@ -109,7 +112,11 @@ public class Quiz {
 
     public int getUserInput(){
         Scanner in = new Scanner(System.in);
-        return in.nextInt();
+        String input = in.nextLine();
+        if(input.equals("exit")){
+            return -1;
+        }
+        return Integer.valueOf(input);
     }
 
     public void displayInstantFeedback(Question question){
