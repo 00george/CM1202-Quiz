@@ -21,6 +21,9 @@ public class DisplayStatsAction extends Action {
             // Do nothing
         }
         r.showTable();
+        r.scoreBox();
+        System.out.printf("The question most correctly answered is %d!%n",r.findMostCorrectQuestion());
+        System.out.printf("The question most incorrectly answered is %d!%n",r.findMostIncorrectQuestion());
 
     }
 }
