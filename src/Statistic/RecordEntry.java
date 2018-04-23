@@ -1,16 +1,18 @@
 package Statistic;
 
+import com.sun.deploy.util.StringUtils;
+
 import java.io.*;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class RecordEntry implements Serializable {
     private String schoolName;
     private String questionTheme;
-    private int[] questionCorrect;
-    private int[] questionIncorrect;
+    private ArrayList<Integer> questionCorrect;
+    private ArrayList<Integer> questionIncorrect;
     private int time;
 
-    public RecordEntry(String schoolName, String questionTheme, int[] questionCorrect, int[] questionIncorrect, int time) {
+    public RecordEntry(String schoolName, String questionTheme, ArrayList<Integer> questionCorrect, ArrayList<Integer> questionIncorrect, int time) {
         this.schoolName = schoolName;
         this.questionTheme = questionTheme;
         this.questionCorrect = questionCorrect;
@@ -26,20 +28,28 @@ public class RecordEntry implements Serializable {
         return questionTheme;
     }
 
-    public int[] getQuestionCorrect() {
+    public ArrayList<Integer> getQuestionCorrect() {
         return questionCorrect;
     }
 
-    public int[] getQuestionIncorrect() {
+    public ArrayList<Integer> getQuestionIncorrect() {
         return questionIncorrect;
     }
 
     public String getStringQuestionCorrect() {
-        return Arrays.toString(questionCorrect);
+        String output = "";
+        for (int i = 0; i < questionCorrect.size(); i++) {
+            output += String.valueOf(questionCorrect.get(i));
+        }
+        return output;
     }
 
     public String getStringQuestionIncorrect() {
-        return Arrays.toString(questionIncorrect);
+        String output = "";
+        for (int i = 0; i < questionCorrect.size(); i++) {
+            output += String.valueOf(questionIncorrect.get(i));
+        }
+        return output;
     }
 
     public int getTime() {

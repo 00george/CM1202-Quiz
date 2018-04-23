@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
-import java.util.Arrays;
 
 public class Record implements Serializable {
     private ArrayList<RecordEntry> records;
@@ -13,7 +12,7 @@ public class Record implements Serializable {
         records = new ArrayList<RecordEntry>();
     }
 
-    public void add(String schoolName, String questionTheme, int[] questionCorrect, int[] questionIncorrect, int time) {
+    public void add(String schoolName, String questionTheme, ArrayList<Integer> questionCorrect, ArrayList<Integer> questionIncorrect, int time) {
         records.add(new RecordEntry(schoolName, questionTheme, questionCorrect, questionIncorrect, time));
     }
 
@@ -112,8 +111,6 @@ public class Record implements Serializable {
         String[] schoolName;
         int[] correctQuestionCount;
         int[] timeTotal;
-
-
     }
 
     public void save(String filename) {
