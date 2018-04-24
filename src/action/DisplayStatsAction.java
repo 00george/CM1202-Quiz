@@ -22,8 +22,9 @@ public class DisplayStatsAction extends Action {
         }
         r.showTable();
         r.scoreBox();
-        System.out.printf("The question most correctly answered is %d!%n",r.findMostCorrectQuestion());
-        System.out.printf("The question most incorrectly answered is %d!%n",r.findMostIncorrectQuestion());
+        //System.out.printf("The question most correctly answered is %d!%n",r.findMostCorrectQuestion());
+        //2
+        // System.out.printf("The question most incorrectly answered is %d!%n",r.findMostIncorrectQuestion());
 
     }
 }
